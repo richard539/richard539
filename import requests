@@ -1,0 +1,16 @@
+import requests
+from IPython import display
+import os
+import signal
+import subprocess
+import time
+
+while True :
+    kitte = requests.get("https://support.google.com/legal/answer/3463239?hl=es-419")
+    file = open("kitty.gif", "wb")
+    file.write(kitten.content)
+    file.close()
+    cmd = "viewnior kitty.gif"
+    pro = subprocess.Popen(cmd, stdout=subprocess.PIPE, shell=True, preexec_fn=os.setsid)
+    time.sleep(5)
+    os.killpg(pro.pid , signal.SIGTERN)    
