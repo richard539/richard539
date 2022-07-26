@@ -1,0 +1,42 @@
+# -*- coding: utf-8 -*-
+"""
+Created on Thu Jul 21 18:59:36 2022
+
+@author: USER
+"""
+
+import random
+filas=int(input("Ingrese el numero de filas que desea: "))
+while filas<4 or filas>=30:
+    filas=int(input("Error, Ingrese un numero mayor que 4 y menor de 30"))
+columna=int(input("Ingrese el numero de filas que desea: "))
+while columna<4 or filas>=30:
+    columna=int(input("Error, Ingrese un numero mayor que 4 y menor de 30"))
+VECTOR=[]
+for i in range(filas):
+    VECTOR.append([0])
+    for j in range(columna-1):
+        VECTOR[i].append(0)
+for i in range(filas):
+    for j in range(columna-1):
+        VECTOR[i][j]=(random.randrange(1,10))
+for i in range(filas):
+    print("|",end="")
+    for j in range(columna):
+        print(VECTOR[i][j],"|",end="")
+    print("|n")
+print("Diagonal principal")
+for i in range(columna):
+    print("|",end="")
+    for j in range(filas):
+        if i==j:
+            print(VECTOR[i][j],"|",end="")
+    print("|n")
+    
+print("Diagonal secundaria")
+for i in range(filas):
+    print("|",end="")
+    for j in range(columna):
+        if i>=j or i==j:
+            print(VECTOR[i][j],"|",end="")
+    print("|n")
