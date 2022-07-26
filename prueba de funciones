@@ -1,0 +1,32 @@
+nombre=str(input("Ingrese su nombre: "))
+apellido=str(input("Ingrese su apellido: "))
+edad=int(input("Ingrese su edad: "))
+cedula=int(input("Ingrese su numero de cedula: "))
+if edad>100:
+    print("El valor de la edad es incorrecto: ")
+elif cedula>9999999999:
+    print("El numero de cedula es incorecto: ")
+signos=[".","_","-","@"]
+numeros=["0","1","2","3","4","5","6","7","8","9"]
+dominiso=["gmail","ups",",hotmail","outlook","edu"]
+minusculas=["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","x","y","z"]
+mayusculas=[]
+extenciones=["com","net","ec","gob"]
+
+correo=input("Escribe tu email: ")
+problema=""
+
+for x in minusculas:
+    mayusculas.append(x.upper())
+    
+if correo.find("@"):
+    nuevoe=correo.split("@")
+    usuario=nuevoe[0]
+    resto=nuevoe[1]
+    continuacion=resto.split(".")
+    dominio=continuacion[0]
+    terminacion=continuacion[1]
+else:
+    print("Error")
+        
+print("Hola",nombre,apellido,edad,cedula,correo)
